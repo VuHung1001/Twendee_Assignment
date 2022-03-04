@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
+/* table */
+#result {
+  position: absolute;
+  top: calc(50% + 80px);
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 60vw;
+  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#result table {
+  width: 100%;
+  border-spacing: 5px;
+  border: 1px solid gray;
+  border-collapse: collapse;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+#result table thead {
+  border: 1px solid gray;
+  border-collapse: collapse;
+  background-color: #6868ac;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#result table th {
+  text-align: center;
+  border: 0.5px solid gray;
+  border-collapse: collapse;
+  padding: 10px 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#result table td {
+  text-align: center;
+  border: 0.5px solid gray;
+  border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+  background-color: #d8d3d3;
+}
+
+/* pagination */
+.pagination {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  margin: 10px 0px;
+  padding: 10px 0px;
+}
+
+.pagination li {
+  list-style-type: none;
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+}
+
+.pagination li.active {
+  background-color: #4caf50;
+  color: white;
+  border: 1px solid #4caf50;
+}
+
+.pagination li:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.pagination li:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.pagination li:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+/* input, button and select */
+#optional {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#optional div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#totalUsers,
+#rowPerPage,
+#sort {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  width: 60%;
+  margin-top: 5px;
+}
+
+#optional button {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-weight: 700;
 }
